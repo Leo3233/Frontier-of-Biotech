@@ -1,0 +1,123 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontier of Biotech: From System Biology to Whole Cell Methodology</title>
+  <link rel="stylesheet" href="css/app.css">
+  <style>
+      table {
+          width: 800px; /* Set table width */
+          margin: auto; /* Center the table */
+          border-collapse: collapse; /* Ensure borders are collapsed (if needed) */
+          border: none; /* Remove table borders */
+      }
+      tr {
+        height: 100px;
+      }
+      td {
+          text-align: center; /* Center the text */
+          border: none;
+      }
+      .logo {
+        max-width: 260px;
+        max-height: 80px;
+      }
+      .logo-small {
+        max-width: 240px;
+        max-height: 70px;
+      }
+      .logo-long {
+        max-width: 400px;
+        max-height: 45px;
+      }
+  </style>
+  <script>
+  function includeHTML() {
+    var z, i, elmnt, file, xhttp;
+    /* Loop through a collection of all HTML elements: */
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
+      elmnt = z[i];
+      /*search for elements with a certain atrribute:*/
+      file = elmnt.getAttribute("w3-include-html");
+      if (file) {
+        /* Make an HTTP request using the attribute value as the file name: */
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4) {
+            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+            /* Remove the attribute, and call this function once more: */
+            elmnt.removeAttribute("w3-include-html");
+            includeHTML();
+          }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        /* Exit the function: */
+        return;
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <div w3-include-html="header.html"></div>
+
+  <!-- Banner -->
+  <div w3-include-html="banner.html"></div>
+
+  <!-- Navigation Menu -->
+  <div class="row">
+    <div w3-include-html="navigator.html"></div>
+
+    <!-- Main Content -->
+    <div id="content-block" class="medium-9 columns">
+      <h2>Sponsors</h2>
+      <!-- <table>
+        <tr>
+          <td><img class="logo" src="img/sponsors/UGC.png" alt="UGC"/></td>
+          <td><img style="height:70px;" src="img/sponsors/S.png" alt="S"/></td>
+          <td><img class="logo" src="img/sponsors/unicrom.png" alt="XZ"/></td>
+        </tr> 
+        <tr>
+          <td><img style="height:100px" src="img/sponsors/IM.png" alt="IM"/></td>
+          <td><img class="logo" src="img/sponsors/DP_Tech.png" alt="DP Tech"/></td>
+          <td><img class="logo" src="img/sponsors/XZ.png" alt="XZ"/></td>
+        </tr> 
+        <tr>
+          <td><img class="logo" src="img/sponsors/DPBio.png" alt="DP Bio"/></td>
+          <td><img class="logo" src="img/sponsors/SCITIX.png" alt="SCITIX"/></td>
+          <td><img class="logo" src="img/sponsors/HKUST_KT.png" alt="POTUS"/></td>
+        </tr>
+        <tr>
+          <td><img class="logo" src="img/sponsors/Genemind.png" alt="GeneMind"/></td>
+          <td><img class="logo" src="img/sponsors/BTbio.png" alt="BioMap"/></td>
+          <td><img class="logo" src="img/sponsors/KJ.png" alt="KJO"/></td>
+        </tr>
+        <tr>
+          <td><img style="height:45px" src="img/sponsors/POTUS_LOGO_Red.png" alt="POTUS"/></td>
+          <td><img style="height:68px" src="img/sponsors/ACSIC.png" alt="ACSIC"/></td>
+          <td><img class="logo" src="img/sponsors/GenePie.png" alt="GenePie"/></td>
+        </tr>
+        <tr>
+          <td colspan=3><span style="font-size:32px;text-align:left;">Sponsor for Poster Awards&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><img style="height:45px;" src="img/sponsors/SCIR.png" alt="Scientific report"/></td>
+        </tr>
+      </table> -->
+3
+    </div>
+  </div>
+</div>
+
+  <!-- Footer -->
+<div w3-include-html="footer.html"></div>
+  
+<script>
+includeHTML();
+</script>
+</body>
+</html>
