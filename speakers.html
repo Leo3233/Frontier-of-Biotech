@@ -140,10 +140,11 @@
       ['Westlake, China', 'Westlake University']
     ]);
 
-    // Sort speakers by short affiliation (alphabetically)
-    const speakers = [...rawSpeakers].sort((a, b) => 
-      a.shortAffil.localeCompare(b.shortAffil)
-    );
+    // get speakers information
+    const speakers = [...rawSpeakers]
+    // const speakers = [...rawSpeakers].sort((a, b) => 
+    //   a.shortAffil.localeCompare(b.shortAffil)
+    // );
 
     // Function to generate affiliation reference div
     function generateAffiliationReference() {
