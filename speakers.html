@@ -145,9 +145,10 @@
     ]);
 
     // Sort speakers by short affiliation (alphabetically)
-    const speakers = [...rawSpeakers].sort((a, b) => 
-      a.shortAffil.localeCompare(b.shortAffil)
-    );
+    // const speakers = [...rawSpeakers].sort((a, b) => 
+    //   a.shortAffil.localeCompare(b.shortAffil)
+    // );
+    const speakers = [...rawSpeakers];
 
     // Function to generate affiliation reference div
     function generateAffiliationReference() {
