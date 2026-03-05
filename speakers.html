@@ -59,19 +59,15 @@
       color: #1e476b;
       font-size: 1.2rem;
     }
-    .affil-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.8rem 2rem;
-    }
     .affil-item {
       display: flex;
       align-items: baseline;
+      margin-bottom: 8px;
     }
     .affil-short {
       font-weight: 600;
       color: #1e476b;
-      width: 120px;
+      width: 200px;
       flex-shrink: 0;
     }
     .affil-full {
@@ -145,31 +141,29 @@
     ]);
 
     // Sort speakers by short affiliation (alphabetically)
-    // const speakers = [...rawSpeakers].sort((a, b) => 
-    //   a.shortAffil.localeCompare(b.shortAffil)
-    // );
-    const speakers = [...rawSpeakers];
+    const speakers = [...rawSpeakers].sort((a, b) => 
+      a.shortAffil.localeCompare(b.shortAffil)
+    );
 
     // Function to generate affiliation reference div
     function generateAffiliationReference() {
       const container = document.getElementById('affiliation-reference');
       if (!container) return;
       
+      // Clear container
+      container.innerHTML = '';
+      
       // Create header
       const header = document.createElement('h3');
       header.textContent = 'Affiliation Reference';
       container.appendChild(header);
-      
-      // Create grid container
-      const grid = document.createElement('div');
-      grid.className = 'affil-grid';
       
       // Get sorted unique affiliations
       const sortedAffils = Array.from(affilMap.entries()).sort((a, b) => 
         a[0].localeCompare(b[0])
       );
       
-      // Add each affiliation to the grid
+      // Add each affiliation to the container (one per row)
       sortedAffils.forEach(([short, full]) => {
         const item = document.createElement('div');
         item.className = 'affil-item';
@@ -184,10 +178,8 @@
         
         item.appendChild(shortSpan);
         item.appendChild(fullSpan);
-        grid.appendChild(item);
+        container.appendChild(item);
       });
-      
-      container.appendChild(grid);
     }
 
     // Function to generate table
