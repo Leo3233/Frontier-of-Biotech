@@ -108,21 +108,21 @@
   <script>
     // Original speaker data
     const rawSpeakers = [
-      { name: 'Jae-Byum Chang', shortAffil: 'KAIST, Korea', img: 'JBC.png' },
-      { name: 'Namjoon Cho', shortAffil: 'NTU, Singapore', img: 'NC.png' },
-      { name: 'Xiakun Chu', shortAffil: 'HKUST GZ, China', img: 'XC.png' },
-      { name: 'Gang Chen', shortAffil: 'CUHK SZ, China', img: 'CG.png' },
-      { name: 'Tomohiro Hayashi', shortAffil: 'Science Tokyo, Japan', img: 'TH.png' },
-      { name: 'Shinya Kuroda', shortAffil: 'UTokyo, Japan', img: 'SK.png' },
-      { name: 'Wange Lu', shortAffil: 'FAH-SYSU, China', img: 'WL.png' },
-      { name: 'Atsushi Mochizuki', shortAffil: 'KyotoU, Japan', img: 'AM.png' },
-      { name: 'Kathiresan Natarajan', shortAffil: 'BRIC-RGCB, India', img: 'KN.png' },
-      { name: 'Hao Song', shortAffil: 'Northeastern, China', img: 'SH.png' },
-      { name: 'Yanting Wang', shortAffil: 'ITP, China', img: 'YW.png' },
-      { name: 'Bing Yuan', shortAffil: 'SLAB, China', img: 'BY.png' },
-      { name: 'Li-Sheng Zhang', shortAffil: 'HKUST, China', img: 'LZ.png' },
-      { name: 'Kechun Zhang', shortAffil: 'Westlake, China', img: 'KZ.png' },
-      { name: 'Kaicheng Zhu', shortAffil: 'HKUST, China', img: 'KCZ.png' }
+      { name: 'Jae-Byum Chang', title: "Prof.", shortAffil: 'KAIST, Korea', img: 'JBC.png' },
+      { name: 'Namjoon Cho', title: "Prof.", shortAffil: 'NTU, Singapore', img: 'NC.png' },
+      { name: 'Xiakun Chu', title: "Prof.", shortAffil: 'HKUST GZ, China', img: 'XC.png' },
+      { name: 'Gang Chen', title: "Prof.", shortAffil: 'CUHK SZ, China', img: 'CG.png' },
+      { name: 'Tomohiro Hayashi', title: "Prof.", shortAffil: 'Science Tokyo, Japan', img: 'TH.png' },
+      { name: 'Shinya Kuroda', title: "Prof.", shortAffil: 'UTokyo, Japan', img: 'SK.png' },
+      { name: 'Wange Lu', title: "Prof.", shortAffil: 'FAH-SYSU, China', img: 'WL.png' },
+      { name: 'Atsushi Mochizuki', title: "Prof.", shortAffil: 'KyotoU, Japan', img: 'AM.png' },
+      { name: 'Kathiresan Natarajan', title: "Prof.", shortAffil: 'BRIC-RGCB, India', img: 'KN.png' },
+      { name: 'Hao Song', title: "Prof.", shortAffil: 'Northeastern, China', img: 'SH.png' },
+      { name: 'Yanting Wang', title: "Prof.", shortAffil: 'ITP, China', img: 'YW.png' },
+      { name: 'Bing Yuan', title: "Prof.", shortAffil: 'SLAB, China', img: 'BY.png' },
+      { name: 'Li-Sheng Zhang', title: "Prof.", shortAffil: 'HKUST, China', img: 'LZ.png' },
+      { name: 'Kechun Zhang', title: "Prof.", shortAffil: 'Westlake, China', img: 'KZ.png' },
+      { name: 'Kaicheng Zhu', title: "Dr.", shortAffil: 'HKUST, China', img: 'KCZ.png' }
     ];
 
     // Full affiliation information
@@ -230,7 +230,7 @@
 
             // Create span with speaker info
             const nameSpan = document.createElement('span');
-            nameSpan.innerHTML = `Prof. ${speaker.name}`;
+            nameSpan.innerHTML = `${speaker.title} ${speaker.name}`;
             td.appendChild(nameSpan);
             
             // Add short affiliation
